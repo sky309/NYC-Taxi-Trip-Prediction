@@ -6,7 +6,7 @@ The competition dataset is based on the 2016 NYC Yellow Cab trip record data mad
 # Data fields
 **id** - a unique identifier for each trip
 
-**vendor_id **- a code indicating the provider associated with the trip record
+**vendor_id**- a code indicating the provider associated with the trip record
 
 **pickup_datetime** - date and time when the meter was engaged
 
@@ -18,7 +18,7 @@ The competition dataset is based on the 2016 NYC Yellow Cab trip record data mad
 
 **pickup_latitude** - the latitude where the meter was engaged
 
-**dropoff_longitude **- the longitude where the meter was disengaged
+**dropoff_longitude**- the longitude where the meter was disengaged
 
 **dropoff_latitude** - the latitude where the meter was disengaged
 
@@ -29,7 +29,7 @@ The competition dataset is based on the 2016 NYC Yellow Cab trip record data mad
 **trip_duration** - duration of the trip in seconds
 
 # FAQ
-**Q: Why remove the outliers in the train data? **
+**Q: Why remove the outliers in the train data?**
 
 Trips that are outside of the 99th quantile for trip length will unduly skew all of our numbers and results. Let's remove them. This will remove only 14593 out of the nearly 1.5 million trips from the train dataset.
 
@@ -41,11 +41,11 @@ According to the Kaggle website:
 The decision was made to not remove dropoff coordinates from the dataset order to provide an expanded set of variables to use in Kernels.
 Since the dropoff_datetime was not present in the test dataset, we removed it. It also doesn’t make sense to use it since a taxi driver wouldn’t necessarily know how long a trip when picking someone up.
 
-**Q: What is drop_contains? **
+**Q: What is drop_contains?**
 
 It is a list of strings which will tell DFS to drop any features which match the strings.
 
-**Q: Why is trips.test_data in drop_contains? **
+**Q: Why is trips.test_data in drop_contains?**
 
 We don't want any features to be generated on the test_data column. The column is simply there to differentiate between train and test data. By putting the entity, followed by a dot, and the column name, it tell DFS to drop any aggregation features of test_data. If we had put just test_data in drop_contains, then it would have dropped the test_data column and the aggregation features of test_data.
 
